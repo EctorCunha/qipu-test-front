@@ -1,0 +1,20 @@
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    margin: .5rem;
+    box-shadow: #3c40434d 0px 2px 0px 0px;
+}
+
+.icons{
+    width: 2rem;
+    height: 2rem;
+    color: var(--secondary-color);
+}
+
+.title{
+    font-size: 1.4rem;
+    font-weight: lighter;
+    color: var(--secondary-color);
+}

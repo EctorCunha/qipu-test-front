@@ -1,0 +1,29 @@
+.header-container{
+    position: absolute;
+    inset: 0;
+    z-index: 9;
+    background-color: white;
+}
+
+.header-details{
+    height: 30vw;
+    background-color: var(--secondary-color);
+    border-radius: 35px 35px 0 0;
+}
+
+.icon-details{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.character{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2rem;
+}
+
+.titles{
+    color: var(--quaternary-color);
+}
