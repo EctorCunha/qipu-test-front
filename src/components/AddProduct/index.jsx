@@ -13,7 +13,7 @@ const initialValues = {
   price: 0,
 };
 
-export function AddProduct({ form }) {
+export function AddProduct({ id, name, title, description, input, placeholder, button }) {
   const { modal, closeModal, step, goToNext, goToPrevious } = useContext(ContextProps);
   const [itens, setItens] = useState(6);
   const [values, setValues] = useState(initialValues);
@@ -27,8 +27,7 @@ export function AddProduct({ form }) {
   return (
     <>
       {modal ? 
-      form.map((form) => (
-            <section key={form.id} id={form.id} className="add-container">
+            <section key={id} id={id} className="add-container">
               <div className="add-header">
                 <img
                   onClick={goToPrevious}
@@ -53,15 +52,15 @@ export function AddProduct({ form }) {
                 />
               </div>
 
-              <div className="text-main" key={form.id}>
-                <h1 className="add-title">{form.title}</h1>
-                <p>{form.description}</p>
+              <div className="text-main" key={id}>
+                <h1 className="add-title">{title}</h1>
+                <p>{description}</p>
                 <input
                   onChange={onChange}
                   className="input"
                   type="text"
-                  name={form.name}
-                  placeholder={form.placeholder}
+                  name={name}
+                  placeholder={placeholder}
                 />
                 <button
                   onClick={goToNext}
@@ -74,7 +73,6 @@ export function AddProduct({ form }) {
                 </button>
               </div>
             </section>
-          ))
         : null}
     </>
   );

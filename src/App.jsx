@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Details } from "./components/Details";
+// import { Details } from "./components/Details";
 import { Home } from "./components/Home";
 import { ProductsPages } from "./components/ProductPages";
 import { PropsProvider } from "./context";
@@ -11,7 +11,7 @@ function App() {
       <PropsProvider>
         <Home />
         <ProductsPages />
-        <Details />
+        {/* <Details /> */}
         {/* <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/' element={<ProductsPages/>} />

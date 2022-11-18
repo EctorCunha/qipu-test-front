@@ -1,12 +1,14 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { form } from "../components/ProductPages";
 
 export const ContextProps = createContext();
 
 export function PropsProvider({ children }) {
   const [modal, setModal] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const [clickId, setClickId] = useState();
   const [data, setData] = useState([]);
   const [step, setStep] = useState(0);
   const navigate = useNavigate();
@@ -24,11 +26,13 @@ export function PropsProvider({ children }) {
     }
   }
 
+  console.log(step)
+
   function goToNext(ev) {
-    // const isLastSlide = step === form.length - 1;
-    // const newIndex = isLastSlide ? 0 : step + 1;
-    // setStep(newIndex);
-    setStep((prevActiveStep) => prevActiveStep + 1);
+    const isLastSlide = step === form.length - 1;
+    const newIndex = isLastSlide ? 0 : step + 1;
+    setStep(newIndex);
+    // setStep((prevActiveStep) => prevActiveStep + 1);
     if (step >= 5) {
       ev.preventDefault();
 
@@ -66,15 +70,21 @@ export function PropsProvider({ children }) {
 
   function openClicked() {
     setClicked(true);
-    // const busca = data.map(data => data.id)
-    data.find((data) => data.id === data.id);
-    // setData(busca)
   }
 
   function closeClicked() {
     setClicked(false);
   }
 
+  function verifyInventory(){
+    if(data.qnt === 0){
+      return "Fora de estoque" & "inventory-red"
+    } else if (data.qnt <= 5){
+      return "Estoque baixo" & "inventory-yellow"
+    } else {
+      return ""
+    }
+  }
 
   return (
     <div>
@@ -90,6 +100,9 @@ export function PropsProvider({ children }) {
           goToPrevious,
           goToNext,
           step,
+          // onClicked,
+          clickId,
+          verifyInventory
         }}
       >
         {children}

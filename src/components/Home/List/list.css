@@ -1,5 +1,4 @@
 .list-container{
-    height: 100vh;
     padding: 1rem;
 }
 
@@ -32,6 +31,12 @@
 .inventory-title{
     font-size: .8rem;
 }
+.inventory-yellow{
+    color: yellow;
+}
+.inventory-red{
+    color: red;
+}
 
 span{
     text-align: right;
@@ -39,7 +44,7 @@ span{
 
 .img-add{
     float: right;
-    margin-top: 250px;
+    margin-top: 320px;
     width: 3rem;
     height: 3rem;
     color: var(--secondary-color);
