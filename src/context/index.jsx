@@ -6,27 +6,26 @@ import { form } from "../components/ProductPages";
 export const ContextProps = createContext();
 
 export function PropsProvider({ children }) {
+  const [data, setData] = useState([]);
   const [modal, setModal] = useState(false);
   const [clicked, setClicked] = useState(false);
-  const [clickId, setClickId] = useState();
-  const [data, setData] = useState([]);
-  const [step, setStep] = useState(0);
+  const [clickId, setClickId] = useState('');
+  const [step, setStep] = useState(1);
   const navigate = useNavigate();
   const params = useParams(); 
 
 
   function goToPrevious() {
-    // const isFirstSlide = step === 0;
-    // const newIndex = isFirstSlide ? form.length - 1 : step - 1;
-    // setStep(newIndex);
-    setStep((prevActiveStep) => prevActiveStep - 1);
+    const isFirstSlide = step === 0;
+    const newIndex = isFirstSlide ? form.length - 1 : step - 1;
+    setStep(newIndex);
+    // setStep((prevActiveStep) => prevActiveStep - 1);
     if (step <= 1) {
       closeModal();
       setStep(0);
     }
   }
 
-  console.log(step)
 
   function goToNext(ev) {
     const isLastSlide = step === form.length - 1;
@@ -72,6 +71,10 @@ export function PropsProvider({ children }) {
     setClicked(true);
   }
 
+  function functions(){
+    openClicked()
+  }
+
   function closeClicked() {
     setClicked(false);
   }
@@ -100,9 +103,8 @@ export function PropsProvider({ children }) {
           goToPrevious,
           goToNext,
           step,
-          // onClicked,
           clickId,
-          verifyInventory
+          verifyInventory,
         }}
       >
         {children}

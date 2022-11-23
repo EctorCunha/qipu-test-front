@@ -6,7 +6,7 @@
     "qnt": 10,
     "description": "Xícara média de café preto, quentinho, feito com café da melhor qualidade",
     "category":"Bebidas",
-    "image": "",
+    "image": "https://mh-1-agencia-estoque.panthermedia.net/media/media_detail/0022000000/22776000/~x%C3%ADcara-de-caf%C3%A9-preto-com-espuma_22776579_detail.jpg",
     "price": "R$ 5,00"
 },
 {
@@ -15,7 +15,7 @@
     "qnt": 2,
     "description": "Xícara média de café da melhor qualidade, misturado com leite",
     "category":"Bebidas",
-    "image": "",
+    "image": "https://static1.conquistesuavida.com.br/articles//2/19/72/@/5471-pensando-de-forma-saudavel-o-indicado-article_gallery-2.jpg",
     "price": "R$ 7,00"
 },
 {
@@ -24,7 +24,7 @@
     "qnt": 0,
     "description": "Copode 400ml de suco de laranja, com gelo e açúcar opcionais.",
     "category":"Bebidas",
-    "image": "",
+    "image": "https://www.edilsonsalgados.com.br/midias/imagens/15586173311.png",
     "price": "R$ 7,00"
 }
 ]

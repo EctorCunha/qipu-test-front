@@ -17,13 +17,18 @@
 }
 
 .dots{
-    border: none;
+    border: 1px solid #080c0e;
     border-radius: 50%;
-    background-color: #080c0e;
+    background-color: transparent;
     margin: .2rem;
     width: 10px;
     height: 10px;
     margin-top: 1rem;
+    cursor: pointer;
+}
+
+.dots:hover{
+    background-color: #080c0e;
 }
 
 .text-main{

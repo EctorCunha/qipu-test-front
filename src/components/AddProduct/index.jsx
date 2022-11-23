@@ -1,8 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ContextProps } from "../../context";
 import close from "../../assets/icons/close.svg";
 import back from "../../assets/icons/back.svg";
 import "./addProduct.css";
+import "../CardInfo/cardInfo.css";
 
 const initialValues = {
   name: "",
@@ -18,7 +19,6 @@ export function AddProduct({ id, name, title, description, input, placeholder, b
   const [itens, setItens] = useState(6);
   const [values, setValues] = useState(initialValues);
 
-
   function onChange(ev) {
     const { name, value } = ev.target;
     setValues({ ...values, [name]: value });
@@ -31,7 +31,7 @@ export function AddProduct({ id, name, title, description, input, placeholder, b
               <div className="add-header">
                 <img
                   onClick={goToPrevious}
-                  className="icon-details"
+                  className="icon-close"
                   src={back}
                   alt="Botão para voltar aba"
                 />
@@ -46,7 +46,7 @@ export function AddProduct({ id, name, title, description, input, placeholder, b
                 </div>
                 <img
                   onClick={closeModal}
-                  className="icon-details"
+                  className="icon-close"
                   src={close}
                   alt="Botão para fechar aba"
                 />

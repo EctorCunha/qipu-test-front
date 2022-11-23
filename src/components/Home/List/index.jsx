@@ -1,30 +1,49 @@
 import { useContext } from "react";
 import { ContextProps } from "../../../context";
-import add from "../../../assets/icons/add.svg";
 import { Card } from "../../Card";
-import "../../Details/details.css";
+import add from "../../../assets/icons/add.svg";
+import { CardInfo } from "../../CardInfo";
+import "../../CardInfo/cardInfo.css";
 import "./list.css";
 
 export function List() {
-  const {
-    openModal,
-    data
-  } = useContext(ContextProps);
+  const { openModal, data, clicked } = useContext(ContextProps);
+  // const maped = data.map((data) => data.id )
+  const dados = data.find(dado => dado.id )
+  // console.log(dados)
+  // console.log(clickId)
+
+
 
   return (
     <section className="list-container">
-      {/* {data.map((data) => {
-        return ( */}
+      {data.map((data) => {
+        return (
           <Card
+            key={data.id}
             id={data.id}
             name={data.name}
             qnt={data.qnt}
             description={data.description}
-            category={data.category}
-            price={data.price}
           />
-        {/* );
-      })} */}
+        );
+      })}
+
+      {clicked ? (
+        <>
+        {/* {data.map((data) =>  */}
+              <CardInfo
+                infoId={dados.id}
+                infoName={dados.name}
+                infoImage={dados.image}
+                infoQnt={dados.qnt}
+                infoCategory={dados.category}
+                infoDescription={dados.description}
+                infoPrice={dados.price}
+              />
+        {/* )} */}
+        </>
+      ) : null}
 
       <img
         onClick={openModal}

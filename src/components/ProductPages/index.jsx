@@ -1,4 +1,9 @@
 import { AddProduct } from "../AddProduct";
+// import { useContext } from "react";
+// import { ContextProps } from "../../context";
+// import { ProductDescription } from "../ProductDescription";
+// import { ProductName } from "../ProductName";
+// import { ProductQuantity } from "../ProductQuantity";
 
 export const form = [
   {
@@ -58,9 +63,31 @@ export const form = [
 ];
 export function ProductsPages() {
   form.reverse();
+  // const {modal, step} = useContext(ContextProps);
+
+  // const getCompStep = () => {
+  //   switch (step) {
+  //     case 1:
+  //       return <ProductName/>
+  //     case 2:
+  //       return <ProductQuantity/>
+  //     case 3:
+  //       return <ProductDescription/>
+    
+  //     default:
+  //       return <ProductName/>
+  //       break;
+  //   }
+  // }
+
 
   return (
-    <div className="card-container">
+    <>
+    {/* {modal ? ( */}
+      <div className="card-container">
+      {/* <ProductName/>
+      <ProductQuantity/>
+      <ProductDescription/> */}
       {form.map((form) => (
         <AddProduct
           form={form}
@@ -74,5 +101,8 @@ export function ProductsPages() {
         />
       ))}
     </div>
+    {/* ): null} */}
+    </>
+    
   );
 }
