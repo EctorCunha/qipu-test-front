@@ -62,7 +62,8 @@ export const form = [
   },
 ];
 export function ProductsPages() {
-  form.reverse();
+  // form.reverse();
+
   // const {modal, step} = useContext(ContextProps);
 
   // const getCompStep = () => {
@@ -90,7 +91,6 @@ export function ProductsPages() {
       <ProductDescription/> */}
       {form.map((form) => (
         <AddProduct
-          form={form}
           id={form.id}
           name={form.name}
           title={form.title}

@@ -1,31 +1,100 @@
 {
-"":[
-{
-    "id": 1,
-    "name": "Café preto",
-    "qnt": 10,
-    "description": "Xícara média de café preto, quentinho, feito com café da melhor qualidade",
-    "category":"Bebidas",
-    "image": "https://mh-1-agencia-estoque.panthermedia.net/media/media_detail/0022000000/22776000/~x%C3%ADcara-de-caf%C3%A9-preto-com-espuma_22776579_detail.jpg",
-    "price": "R$ 5,00"
-},
-{
-    "id": 2,
-    "name": "Café com leite",
-    "qnt": 2,
-    "description": "Xícara média de café da melhor qualidade, misturado com leite",
-    "category":"Bebidas",
-    "image": "https://static1.conquistesuavida.com.br/articles//2/19/72/@/5471-pensando-de-forma-saudavel-o-indicado-article_gallery-2.jpg",
-    "price": "R$ 7,00"
-},
-{
-    "id": 3,
-    "name": "Suco de laranja",
-    "qnt": 0,
-    "description": "Copode 400ml de suco de laranja, com gelo e açúcar opcionais.",
-    "category":"Bebidas",
-    "image": "https://www.edilsonsalgados.com.br/midias/imagens/15586173311.png",
-    "price": "R$ 7,00"
-}
-]
+  "": [
+    {
+      "id": 1,
+      "name": "Café preto",
+      "qnt": 10,
+      "description": "Xícara média de café preto, quentinho, feito com café da melhor qualidade",
+      "category": "Bebidas",
+      "image": "https://mh-1-agencia-estoque.panthermedia.net/media/media_detail/0022000000/22776000/~x%C3%ADcara-de-caf%C3%A9-preto-com-espuma_22776579_detail.jpg",
+      "price": "R$ 5,00"
+    },
+    {
+      "id": 2,
+      "name": "Café com leite",
+      "qnt": 2,
+      "description": "Xícara média de café da melhor qualidade, misturado com leite",
+      "category": "Bebidas",
+      "image": "https://static1.conquistesuavida.com.br/articles//2/19/72/@/5471-pensando-de-forma-saudavel-o-indicado-article_gallery-2.jpg",
+      "price": "R$ 7,00"
+    },
+    {
+      "id": 3,
+      "name": "Suco de laranja",
+      "qnt": 0,
+      "description": "Copode 400ml de suco de laranja, com gelo e açúcar opcionais.",
+      "category": "Bebidas",
+      "image": "https://www.edilsonsalgados.com.br/midias/imagens/15586173311.png",
+      "price": "R$ 7,00"
+    },
+    {
+      "name": "Ector",
+      "qnt": "3",
+      "description": "bvdfbvdfsvbsdbv",
+      "category": "bebida",
+      "image": "",
+      "price": "23,00",
+      "img": "http",
+      "id": 9
+    },
+    {
+      "name": "vsdavasv",
+      "qnt": "vaasdvsda",
+      "description": "sdvsdvsd",
+      "category": "sdvsdv",
+      "image": "",
+      "price": "2341234",
+      "img": "vsadvsdvsad",
+      "id": 10
+    },
+    {
+      "name": "fecec",
+      "qnt": "12",
+      "description": "qdqwdqwd",
+      "category": "",
+      "image": "",
+      "price": "",
+      "id": 11
+    },
+    {
+      "name": "ewcewc",
+      "qnt": "32",
+      "description": "svcsecvs",
+      "category": "asvvadrv",
+      "image": "",
+      "price": "",
+      "img": "aavrvr",
+      "id": 12
+    },
+    {
+      "name": "bill",
+      "qnt": "65",
+      "description": "sdfgbsbsbfnfsdnvasdouivhpaoiujvbhapiuvbhaepriovybhuaerpoivbyhaerv",
+      "category": "bebidas",
+      "image": "",
+      "price": "",
+      "img": "http",
+      "id": 13
+    },
+    {
+      "name": "xaa",
+      "qnt": "33",
+      "description": "iucbwepiubvgcWIPEUVBWPeiv",
+      "category": "suco",
+      "image": "",
+      "price": "12",
+      "img": "gagasdfgaga",
+      "id": 14
+    },
+    {
+      "name": "NLW Return",
+      "qnt": "22",
+      "description": "svcsd",
+      "category": "asc",
+      "image": "",
+      "price": "6785",
+      "img": "feewcvwe",
+      "id": 15
+    }
+  ]
 }

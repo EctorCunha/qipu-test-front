@@ -14,7 +14,7 @@ export function CardInfo({
   infoDescription,
   infoPrice,
 }) {
-  const { closeClicked } = useContext(ContextProps);
+  const { closeClicked, removeProduct, editProduct } = useContext(ContextProps);
 
   return (
     <>
@@ -31,9 +31,12 @@ export function CardInfo({
             <span>{infoName}</span>
           </div>
 
-          <div className="icon-edit">
-            <img src={trash} alt="Botão para lixeira" />
-            <img src={edit} alt="Botão para editar item" />
+          <div className="icon-change">
+            <img
+             onClick={removeProduct}
+             src={trash} alt="Botão para lixeira" />
+             
+            <img onClick={editProduct} src={edit} alt="Botão para editar item" />
           </div>
         </div>
         
