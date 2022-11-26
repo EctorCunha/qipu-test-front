@@ -2,8 +2,6 @@ import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-
-
 export const ContextProps = createContext();
 
 const initialValues = {
@@ -15,19 +13,18 @@ const initialValues = {
   price: "R$ ",
 };
 
-
 export function PropsProvider({ children }) {
   const [data, setData] = useState([]);
   const [modal, setModal] = useState(false);
   const [clicked, setClicked] = useState(false);
-  const [atualize, setAtualize] = useState(false)
-  // const [clickId, setClickId] = useState('');
+  const [atualize, setAtualize] = useState(false);
   const [step, setStep] = useState(1);
   const [values, setValues] = useState(initialValues);
-  const navigate = useNavigate();
-  const params = useParams(); 
 
-  function getData(){
+  const navigate = useNavigate();
+  const params = useParams();
+
+  function getData() {
     try {
       axios.get("http://localhost:3000").then((response) => {
         setData(response.data);
@@ -39,13 +36,13 @@ export function PropsProvider({ children }) {
 
   useEffect(() => {
     getData();
-  }, [atualize])
+  }, [atualize]);
 
   function onChange(ev) {
     const { name, value } = ev.target;
     setValues({ ...values, [name]: value });
   }
-  
+
   function goToPrevious() {
     // const isFirstSlide = step === 0;
     // const newIndex = isFirstSlide ? form.length - 1 : step - 1;
@@ -63,14 +60,12 @@ export function PropsProvider({ children }) {
     // setStep(newIndex);
     setStep((prevActiveStep) => prevActiveStep + 1);
     if (step >= 6) {
-      
       axios.post("http://localhost:3000", values).then((response) => {
         navigate("/");
       });
-      setAtualize(!atualize)
+      setAtualize(!atualize);
       closeModal();
       setStep(0);
-
     }
   }
 
@@ -91,34 +86,40 @@ export function PropsProvider({ children }) {
     setClicked(false);
   }
 
-  function removeProduct(id){
-    axios.delete(`http://localhost:3000/${id}`, values).then((response) => {
-      navigate("/");
-    });
-    setAtualize(!atualize)
-    closeClicked()
+  function removeProduct(id) {
+    if(confirm("Deseja mesmo excluir este produto?")){
+      axios.delete(`http://localhost:3000/${id}`).then((response) => {
+        navigate("/");
+      });
+      setAtualize(!atualize);
+      closeClicked();
+    } else {
+      return;
+    }
+    
   }
 
-  function editProduct(id){
+  function editProduct(id) {
     axios.put(`http://localhost:3000/${id}`).then((response) => {
       navigate("/");
     });
-    setAtualize(!atualize)
+    setAtualize(!atualize);
   }
 
-  function functions(){
-    openClicked()
+  // const clicado = document.querySelectorAll(".principal");
+  // for (var i = 0; i < clicado.length; i++) {
+  //   clicado[i].addEventListener("click", function (e) {
+  //     // setClickId(clicado)
+  //     // setClickId(clicado[i].id);
+  //     // setClickId(e.target.id);
+  //     alert("O elemento clicado foi o " + this.innerHTML);
+  //   });
+  // }
+
+  function functions() {
+    openClicked();
   }
 
-  function verifyInventory(){
-    if(data.qnt === 0){
-      return "Fora de estoque" & "inventory-red"
-    } else if (data.qnt <= 5){
-      return "Estoque baixo" & "inventory-yellow"
-    } else {
-      return ""
-    }
-  }
 
   return (
     <div>
@@ -134,10 +135,8 @@ export function PropsProvider({ children }) {
           goToPrevious,
           goToNext,
           step,
-          verifyInventory,
           onChange,
           removeProduct,
-          editProduct
         }}
       >
         {children}

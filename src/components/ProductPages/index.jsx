@@ -1,9 +1,5 @@
 import { AddProduct } from "../AddProduct";
-// import { useContext } from "react";
-// import { ContextProps } from "../../context";
-// import { ProductDescription } from "../ProductDescription";
-// import { ProductName } from "../ProductName";
-// import { ProductQuantity } from "../ProductQuantity";
+import { Slider, Slide } from 'pure-react-carousel';
 
 export const form = [
   {
@@ -61,34 +57,51 @@ export const form = [
     button: true,
   },
 ];
+
 export function ProductsPages() {
   // form.reverse();
 
-  // const {modal, step} = useContext(ContextProps);
-
-  // const getCompStep = () => {
-  //   switch (step) {
-  //     case 1:
-  //       return <ProductName/>
-  //     case 2:
-  //       return <ProductQuantity/>
-  //     case 3:
-  //       return <ProductDescription/>
-    
-  //     default:
-  //       return <ProductName/>
-  //       break;
-  //   }
-  // }
-
 
   return (
-    <>
-    {/* {modal ? ( */}
-      <div className="card-container">
-      {/* <ProductName/>
-      <ProductQuantity/>
-      <ProductDescription/> */}
+    <div className="slider" >
+      <Slider>
+        <Slide index={0}>
+          <AddProduct />
+        </Slide>
+        <Slide index={1} >
+          <AddProduct/>
+        </Slide>
+        <Slide index={2} >
+          <AddProduct/>
+        </Slide>
+        <Slide index={3} >
+          <AddProduct/>
+        </Slide>
+        <Slide index={4} >
+          <AddProduct/>
+        </Slide>
+        <Slide index={5} >
+          <AddProduct/>
+        </Slide>
+      </Slider>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <div className="card-container">
       {form.map((form) => (
         <AddProduct
           id={form.id}
@@ -97,12 +110,10 @@ export function ProductsPages() {
           description={form.description}
           input={form.input}
           placeholder={form.placeholder}
-          // button={form.button}
         />
       ))}
+    </div> */}
     </div>
-    {/* ): null} */}
-    </>
     
   );
 }
