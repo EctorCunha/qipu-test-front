@@ -1,5 +1,6 @@
 import { AddProduct } from "../AddProduct";
 import { Slider, Slide } from 'pure-react-carousel';
+import './productPages.css';
 
 export const form = [
   {
@@ -64,10 +65,21 @@ export function ProductsPages() {
 
   return (
     <div className="slider" >
-      <Slider>
+      {/* <Slider>
+        {form.map((form) => (
         <Slide index={0}>
-          <AddProduct />
+        <AddProduct
+          index={0}
+          key={form.id}
+          id={form.id}
+          name={form.name}
+          title={form.title}
+          description={form.description}
+          input={form.input}
+          placeholder={form.placeholder}
+        />
         </Slide>
+      ))}
         <Slide index={1} >
           <AddProduct/>
         </Slide>
@@ -82,26 +94,13 @@ export function ProductsPages() {
         </Slide>
         <Slide index={5} >
           <AddProduct/>
-        </Slide>
-      </Slider>
+        </Slide> 
+      </Slider> */}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* <div className="card-container">
+      <div className="card-container">
       {form.map((form) => (
         <AddProduct
           id={form.id}
@@ -110,9 +109,12 @@ export function ProductsPages() {
           description={form.description}
           input={form.input}
           placeholder={form.placeholder}
+          category={form.category}
+          image={form.image}
         />
       ))}
-    </div> */}
+    </div>
+    
     </div>
     
   );

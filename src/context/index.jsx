@@ -10,7 +10,7 @@ const initialValues = {
   description: "",
   category: "",
   image: "",
-  price: "R$ ",
+  price: "",
 };
 
 export function PropsProvider({ children }) {
@@ -20,9 +20,8 @@ export function PropsProvider({ children }) {
   const [atualize, setAtualize] = useState(false);
   const [step, setStep] = useState(1);
   const [values, setValues] = useState(initialValues);
-
+  const [clickEdit, setClickEdit] = useState(false);
   const navigate = useNavigate();
-  const params = useParams();
 
   function getData() {
     try {
@@ -44,9 +43,6 @@ export function PropsProvider({ children }) {
   }
 
   function goToPrevious() {
-    // const isFirstSlide = step === 0;
-    // const newIndex = isFirstSlide ? form.length - 1 : step - 1;
-    // setStep(newIndex);
     setStep((prevActiveStep) => prevActiveStep - 1);
     if (step <= 1) {
       closeModal();
@@ -55,15 +51,12 @@ export function PropsProvider({ children }) {
   }
 
   function goToNext() {
-    // const isLastSlide = step === form.length - 1;
-    // const newIndex = isLastSlide ? 0 : step + 1;
-    // setStep(newIndex);
     setStep((prevActiveStep) => prevActiveStep + 1);
     if (step >= 6) {
       axios.post("http://localhost:3000", values).then((response) => {
+        setAtualize(!atualize);
         navigate("/");
       });
-      setAtualize(!atualize);
       closeModal();
       setStep(0);
     }
@@ -100,26 +93,22 @@ export function PropsProvider({ children }) {
   }
 
   function editProduct(id) {
-    axios.put(`http://localhost:3000/${id}`).then((response) => {
-      navigate("/");
+    axios.put(`http://localhost:3000/${id}`, values).then((response) => {
+      setClickEdit(false);
+      setClicked(true)
+      setAtualize(!atualize);
     });
-    setAtualize(!atualize);
   }
 
-  // const clicado = document.querySelectorAll(".principal");
-  // for (var i = 0; i < clicado.length; i++) {
-  //   clicado[i].addEventListener("click", function (e) {
-  //     // setClickId(clicado)
-  //     // setClickId(clicado[i].id);
-  //     // setClickId(e.target.id);
-  //     alert("O elemento clicado foi o " + this.innerHTML);
-  //   });
-  // }
-
-  function functions() {
-    openClicked();
+  function buttonEdit() {
+    setClickEdit(true)
   }
 
+  function cancelEdit() {
+    setClickEdit(false)
+  }
+
+  console.log(values)
 
   return (
     <div>
@@ -137,6 +126,11 @@ export function PropsProvider({ children }) {
           step,
           onChange,
           removeProduct,
+          buttonEdit,
+          editProduct,
+          clickEdit,
+          cancelEdit,
+          values,
         }}
       >
         {children}

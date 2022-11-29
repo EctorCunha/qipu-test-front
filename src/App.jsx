@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <PropsProvider>
         <Home />
-        <CarouselProvider
+        {/* <CarouselProvider
          visibleSlides={slideCount}
          totalSlides={6}
          step={1}
@@ -22,12 +22,12 @@ function App() {
          naturalSlideWidth={100}
          naturalSlideHeight={125}
          isIntrinsicHeight={true}
-        >
+        > */}
         <ProductsPages 
-        setSlideCount={setSlideCount}
-        setCurrentSlide={setCurrentSlide}
+        // setSlideCount={setSlideCount}
+        // setCurrentSlide={setCurrentSlide}
         />
-        </CarouselProvider>
+        {/* </CarouselProvider> */}
         {/* <Details /> */}
         {/* <Routes>
       <Route path='/' element={<Home/>} />

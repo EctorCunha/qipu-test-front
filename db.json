@@ -28,33 +28,14 @@
       "price": "R$ 7,00"
     },
     {
-      "name": "Ector",
-      "qnt": "3",
-      "description": "bvdfbvdfsvbsdbv",
-      "category": "bebida",
-      "image": "",
-      "price": "23,00",
-      "img": "http",
-      "id": 9
-    },
-    {
-      "name": "fecec",
-      "qnt": "12",
-      "description": "qdqwdqwd",
+      "name": "",
+      "qnt": 0,
+      "description": "",
       "category": "",
       "image": "",
       "price": "",
+      "": "v",
       "id": 11
-    },
-    {
-      "name": "ewcewc",
-      "qnt": "32",
-      "description": "svcsecvs",
-      "category": "asvvadrv",
-      "image": "",
-      "price": "",
-      "img": "aavrvr",
-      "id": 12
     },
     {
       "name": "NLW Return",
@@ -65,6 +46,56 @@
       "price": "6785",
       "img": "feewcvwe",
       "id": 15
+    },
+    {
+      "name": "chá",
+      "qnt": "4",
+      "description": "chá de camomila",
+      "category": "liquido",
+      "image": "",
+      "price": "3,00",
+      "id": 16
+    },
+    {
+      "name": "asfasf",
+      "qnt": "6",
+      "description": "adbvebebearbef",
+      "category": "liquido",
+      "image": "",
+      "price": "5",
+      "img": "vswv",
+      "id": 17
+    },
+    {
+      "name": "acac",
+      "qnt": "2",
+      "description": "aasvcsavav",
+      "category": "sdverv",
+      "image": "",
+      "price": "6",
+      "img": "btbtrb",
+      "id": 18
+    },
+    {
+      "name": "dado",
+      "qnt": "7",
+      "description": "dado normal",
+      "category": "brinquedo",
+      "image": "",
+      "price": "2,00",
+      "img": "https://static7.depositphotos.com/1257959/742/i/450/depositphotos_7427780-stock-photo-playing-dice.jpg",
+      "id": 19
+    },
+    {
+      "name": "cháasa",
+      "qnt": "77",
+      "description": "cvdcebrtntyjmt,m",
+      "category": "liquido",
+      "image": "",
+      "price": "3,10",
+      "": "77a",
+      "img": "https://static7.depositphotos.com/1257959/742/i/450/depositphotos_7427780-stock-photo-playing-dice.jpg",
+      "id": 20
     }
   ]
 }
