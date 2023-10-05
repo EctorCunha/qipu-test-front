@@ -1,51 +1,29 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { form } from "../components/ProductPages";
 
 export const ContextProps = createContext();
 
+const initialValues = {
+  name: "",
+  qnt: 0,
+  description: "",
+  category: "",
+  image: "",
+  price: "",
+};
+
 export function PropsProvider({ children }) {
+  const [data, setData] = useState([]);
   const [modal, setModal] = useState(false);
   const [clicked, setClicked] = useState(false);
-  const [clickId, setClickId] = useState();
-  const [data, setData] = useState([]);
-  const [step, setStep] = useState(0);
+  const [atualize, setAtualize] = useState(false);
+  const [step, setStep] = useState(1);
+  const [values, setValues] = useState(initialValues);
+  const [clickEdit, setClickEdit] = useState(false);
   const navigate = useNavigate();
-  const params = useParams(); 
 
-
-  function goToPrevious() {
-    // const isFirstSlide = step === 0;
-    // const newIndex = isFirstSlide ? form.length - 1 : step - 1;
-    // setStep(newIndex);
-    setStep((prevActiveStep) => prevActiveStep - 1);
-    if (step <= 1) {
-      closeModal();
-      setStep(0);
-    }
-  }
-
-  console.log(step)
-
-  function goToNext(ev) {
-    const isLastSlide = step === form.length - 1;
-    const newIndex = isLastSlide ? 0 : step + 1;
-    setStep(newIndex);
-    // setStep((prevActiveStep) => prevActiveStep + 1);
-    if (step >= 5) {
-      ev.preventDefault();
-
-      closeModal();
-      setStep(0);
-
-      axios.post("http://localhost:3000", values).then((response) => {
-        navigate("/");
-      });
-    }
-  }
-
-  function getData(){
+  function getData() {
     try {
       axios.get("http://localhost:3000").then((response) => {
         setData(response.data);
@@ -54,10 +32,35 @@ export function PropsProvider({ children }) {
       alert("Houve um erro");
     }
   }
-  
+
   useEffect(() => {
     getData();
-  }, [])
+  }, [atualize]);
+
+  function onChange(ev) {
+    const { name, value } = ev.target;
+    setValues({ ...values, [name]: value });
+  }
+
+  function goToPrevious() {
+    setStep((prevActiveStep) => prevActiveStep - 1);
+    if (step <= 1) {
+      closeModal();
+      setStep(0);
+    }
+  }
+
+  function goToNext() {
+    setStep((prevActiveStep) => prevActiveStep + 1);
+    if (step >= 6) {
+      axios.post("http://localhost:3000", values).then((response) => {
+        setAtualize(!atualize);
+        navigate("/");
+      });
+      closeModal();
+      setStep(0);
+    }
+  }
 
   function openModal() {
     setModal(true);
@@ -76,15 +79,36 @@ export function PropsProvider({ children }) {
     setClicked(false);
   }
 
-  function verifyInventory(){
-    if(data.qnt === 0){
-      return "Fora de estoque" & "inventory-red"
-    } else if (data.qnt <= 5){
-      return "Estoque baixo" & "inventory-yellow"
+  function removeProduct(id) {
+    if(confirm("Deseja mesmo excluir este produto?")){
+      axios.delete(`http://localhost:3000/${id}`).then((response) => {
+        navigate("/");
+      });
+      setAtualize(!atualize);
+      closeClicked();
     } else {
-      return ""
+      return;
     }
+    
   }
+
+  function editProduct(id) {
+    axios.put(`http://localhost:3000/${id}`, values).then((response) => {
+      setClickEdit(false);
+      setClicked(true)
+      setAtualize(!atualize);
+    });
+  }
+
+  function buttonEdit() {
+    setClickEdit(true)
+  }
+
+  function cancelEdit() {
+    setClickEdit(false)
+  }
+
+  console.log(values)
 
   return (
     <div>
@@ -100,9 +124,13 @@ export function PropsProvider({ children }) {
           goToPrevious,
           goToNext,
           step,
-          // onClicked,
-          clickId,
-          verifyInventory
+          onChange,
+          removeProduct,
+          buttonEdit,
+          editProduct,
+          clickEdit,
+          cancelEdit,
+          values,
         }}
       >
         {children}

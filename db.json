@@ -1,31 +1,101 @@
 {
-"":[
-{
-    "id": 1,
-    "name": "Café preto",
-    "qnt": 10,
-    "description": "Xícara média de café preto, quentinho, feito com café da melhor qualidade",
-    "category":"Bebidas",
-    "image": "",
-    "price": "R$ 5,00"
-},
-{
-    "id": 2,
-    "name": "Café com leite",
-    "qnt": 2,
-    "description": "Xícara média de café da melhor qualidade, misturado com leite",
-    "category":"Bebidas",
-    "image": "",
-    "price": "R$ 7,00"
-},
-{
-    "id": 3,
-    "name": "Suco de laranja",
-    "qnt": 0,
-    "description": "Copode 400ml de suco de laranja, com gelo e açúcar opcionais.",
-    "category":"Bebidas",
-    "image": "",
-    "price": "R$ 7,00"
-}
-]
+  "": [
+    {
+      "id": 1,
+      "name": "Café preto",
+      "qnt": 10,
+      "description": "Xícara média de café preto, quentinho, feito com café da melhor qualidade",
+      "category": "Bebidas",
+      "image": "https://mh-1-agencia-estoque.panthermedia.net/media/media_detail/0022000000/22776000/~x%C3%ADcara-de-caf%C3%A9-preto-com-espuma_22776579_detail.jpg",
+      "price": "R$ 5,00"
+    },
+    {
+      "id": 2,
+      "name": "Café com leite",
+      "qnt": 2,
+      "description": "Xícara média de café da melhor qualidade, misturado com leite",
+      "category": "Bebidas",
+      "image": "https://static1.conquistesuavida.com.br/articles//2/19/72/@/5471-pensando-de-forma-saudavel-o-indicado-article_gallery-2.jpg",
+      "price": "R$ 7,00"
+    },
+    {
+      "id": 3,
+      "name": "Suco de laranja",
+      "qnt": 0,
+      "description": "Copode 400ml de suco de laranja, com gelo e açúcar opcionais.",
+      "category": "Bebidas",
+      "image": "https://www.edilsonsalgados.com.br/midias/imagens/15586173311.png",
+      "price": "R$ 7,00"
+    },
+    {
+      "name": "",
+      "qnt": 0,
+      "description": "",
+      "category": "",
+      "image": "",
+      "price": "",
+      "": "v",
+      "id": 11
+    },
+    {
+      "name": "NLW Return",
+      "qnt": "22",
+      "description": "svcsd",
+      "category": "asc",
+      "image": "",
+      "price": "6785",
+      "img": "feewcvwe",
+      "id": 15
+    },
+    {
+      "name": "chá",
+      "qnt": "4",
+      "description": "chá de camomila",
+      "category": "liquido",
+      "image": "",
+      "price": "3,00",
+      "id": 16
+    },
+    {
+      "name": "asfasf",
+      "qnt": "6",
+      "description": "adbvebebearbef",
+      "category": "liquido",
+      "image": "",
+      "price": "5",
+      "img": "vswv",
+      "id": 17
+    },
+    {
+      "name": "acac",
+      "qnt": "2",
+      "description": "aasvcsavav",
+      "category": "sdverv",
+      "image": "",
+      "price": "6",
+      "img": "btbtrb",
+      "id": 18
+    },
+    {
+      "name": "dado",
+      "qnt": "7",
+      "description": "dado normal",
+      "category": "brinquedo",
+      "image": "",
+      "price": "2,00",
+      "img": "https://static7.depositphotos.com/1257959/742/i/450/depositphotos_7427780-stock-photo-playing-dice.jpg",
+      "id": 19
+    },
+    {
+      "name": "cháasa",
+      "qnt": "77",
+      "description": "cvdcebrtntyjmt,m",
+      "category": "liquido",
+      "image": "",
+      "price": "3,10",
+      "": "77a",
+      "img": "https://static7.depositphotos.com/1257959/742/i/450/depositphotos_7427780-stock-photo-playing-dice.jpg",
+      "id": 20
+    }
+  ]
 }

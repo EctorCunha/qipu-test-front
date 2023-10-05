@@ -1,4 +1,6 @@
 import { AddProduct } from "../AddProduct";
+import { Slider, Slide } from 'pure-react-carousel';
+import './productPages.css';
 
 export const form = [
   {
@@ -56,23 +58,64 @@ export const form = [
     button: true,
   },
 ];
+
 export function ProductsPages() {
-  form.reverse();
+  // form.reverse();
+
 
   return (
-    <div className="card-container">
-      {form.map((form) => (
+    <div className="slider" >
+      {/* <Slider>
+        {form.map((form) => (
+        <Slide index={0}>
         <AddProduct
-          form={form}
+          index={0}
+          key={form.id}
           id={form.id}
           name={form.name}
           title={form.title}
           description={form.description}
           input={form.input}
           placeholder={form.placeholder}
-          // button={form.button}
+        />
+        </Slide>
+      ))}
+        <Slide index={1} >
+          <AddProduct/>
+        </Slide>
+        <Slide index={2} >
+          <AddProduct/>
+        </Slide>
+        <Slide index={3} >
+          <AddProduct/>
+        </Slide>
+        <Slide index={4} >
+          <AddProduct/>
+        </Slide>
+        <Slide index={5} >
+          <AddProduct/>
+        </Slide> 
+      </Slider> */}
+
+
+
+
+      <div className="card-container">
+      {form.map((form) => (
+        <AddProduct
+          id={form.id}
+          name={form.name}
+          title={form.title}
+          description={form.description}
+          input={form.input}
+          placeholder={form.placeholder}
+          category={form.category}
+          image={form.image}
         />
       ))}
     </div>
+    
+    </div>
+    
   );
 }

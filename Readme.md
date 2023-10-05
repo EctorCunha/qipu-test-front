@@ -7,3 +7,8 @@
 - json-server --watch db.json
 
 - inicialmente para versão mobile
+
+
+* branches 
+- master
+- dev-final

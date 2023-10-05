@@ -1,40 +1,39 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ContextProps } from "../../context";
 import close from "../../assets/icons/close.svg";
 import back from "../../assets/icons/back.svg";
 import "./addProduct.css";
 
-const initialValues = {
-  name: "",
-  qnt: 0,
-  description: "",
-  category: "",
-  image: "",
-  price: 0,
-};
-
-export function AddProduct({ id, name, title, description, input, placeholder, button }) {
-  const { modal, closeModal, step, goToNext, goToPrevious } = useContext(ContextProps);
+export function AddProduct({ id, name, title, description, placeholder, image, category }) {
+  const { modal, closeModal, step, goToNext, goToPrevious, onChange } =
+    useContext(ContextProps);
   const [itens, setItens] = useState(6);
-  const [values, setValues] = useState(initialValues);
 
-
-  function onChange(ev) {
-    const { name, value } = ev.target;
-    setValues({ ...values, [name]: value });
+  const categories = {
+    1: "Bebidas",
+    2: "Cafés",
+    3: "Comidas",
   }
 
   return (
     <>
-      {modal ? 
-            <section key={id} id={id} className="add-container">
+      {modal ? (
+        <>
+          {/* {form.map((form) => ( */}
+            <section
+              key={id}
+              id={id}
+              className="add-container"
+            >
               <div className="add-header">
-                <img
-                  onClick={goToPrevious}
-                  className="icon-details"
-                  src={back}
-                  alt="Botão para voltar aba"
-                />
+                <button>
+                  <img
+                    onClick={goToPrevious}
+                    className="icon-close"
+                    src={back}
+                    alt="Botão para voltar aba"
+                  />
+                </button>
                 <div>
                   {Array.from(Array(itens), (item, index) => {
                     return (
@@ -46,7 +45,7 @@ export function AddProduct({ id, name, title, description, input, placeholder, b
                 </div>
                 <img
                   onClick={closeModal}
-                  className="icon-details"
+                  className="icon-close-product"
                   src={close}
                   alt="Botão para fechar aba"
                 />
@@ -61,19 +60,28 @@ export function AddProduct({ id, name, title, description, input, placeholder, b
                   type="text"
                   name={name}
                   placeholder={placeholder}
+                  image={image}
+                  category={category}
                 />
+                
+                
+                {/* <label htmlFor="picture-input" className="picture">
+                <span className="picture-image" >As dimensões da foto devem ser de 600 x 600</span>
+                </label>
+                <input type="file" accept="image/*" name="image" id="picture-input" /> */}
+
+
                 <button
                   onClick={goToNext}
-                  // onSubmit={onSubmit}
                   className="btn"
-                  // type="button"
                 >
-                  CONTINUAR
-                  {/* {step === 6 ? "ADICIONAR" : "CONTINUAR"} */}
+                  {step === 6 ? "ADICIONAR" : "CONTINUAR"}
                 </button>
               </div>
             </section>
-        : null}
+          {/* ))} */}
+        </>
+      ) : null}
     </>
   );
 }
